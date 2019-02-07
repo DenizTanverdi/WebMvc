@@ -7,9 +7,10 @@ using System.Web;
 
 namespace WebApplication.Models
 {
-    public class Student:BaseEntity
-    {[StringLength(50)]
-    [DisplayName("Öğrenci Adı")]
+    public class Student : BaseEntity
+    {
+        [StringLength(50)]
+        [DisplayName("Öğrenci Adı")]
         public string Name { get; set; }
         [StringLength(50)]
         [DisplayName("Öğrenci Soyadı")]
@@ -17,5 +18,6 @@ namespace WebApplication.Models
         [StringLength(20)]
         [DisplayName("Öğrenci Numarası")]
         public string StudentId { get; set; }
+        public virtual ICollection<ClassRoom> Classrooms { get; set; }
     }
 }
